@@ -18,17 +18,21 @@ PhalApi 2.x 扩展类库 - Apk 提供对APK文件解析功能
 ## 1. 安装使用
 
 此扩展只需要简单的把文件放到Library目录下即可使用使用方法如下:
-
-    $appObj  = new Apk_Lite(); 
-    $targetFile = a.apk;//apk所在的路径地址
-    
-    $res   = $appObj->open($targetFile);
-    
-    $appObj->getAppName();     // 应用名称
-    $appObj->getPackage();    // 应用包名
-    $appObj->getVersionName();  // 版本名称
-    $appObj->getVersionCode();  // 版本代码
-
+```
+ // 在index.php中注册
+  \PhalApi\DI()->apk = function () {
+        return new \PhalApi\Apk\Lite();
+   };
+ 
+ // 例子:
+  $targetFile = a.apk;//apk所在的路径地址
+  $res   = \PhalApi\DI()->apk->open($targetFile);
+  
+  \PhalApi\DI()->apk->getAppName();     // 应用名称
+  \PhalApi\DI()->apk->getPackage();    // 应用包名
+  \PhalApi\DI()->apk->getVersionName();  // 版本名称
+  \PhalApi\DI()->apk->getVersionCode();  // 版本代码
+```
 
 ## 2. 总结
 
