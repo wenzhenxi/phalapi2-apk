@@ -17,7 +17,19 @@ PhalApi 2.x 扩展类库 - Apk 提供对APK文件解析功能
 
 ## 1. 安装使用
 
-此扩展只需要简单的把文件放到Library目录下即可使用使用方法如下:
+
+在项目的composer.json文件中，添加：
+
+```
+{
+    "require": {
+        "phalapi/apk": "2.0.*"
+    }
+}
+```
+
+配置好后，执行composer update更新操作即可。
+
 ```
 // 在index.php中注册
 \PhalApi\DI()->apk = function () {
